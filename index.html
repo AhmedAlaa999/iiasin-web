@@ -1,100 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPUDZ - premium potatos 4 premium ppl</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HydroLoop Project</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body{
+    background:linear-gradient(to right,#00c6ff,#0072ff);
+    color:white;
+    overflow-x:hidden;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 50px;
+    background:rgba(0,0,0,0.2);
+    backdrop-filter:blur(10px);
+    position:fixed;
+    width:100%;
+    z-index:100;
+}
+
+nav h1{
+    font-size:24px;
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav ul li{
+    cursor:pointer;
+    transition:0.3s;
+}
+
+nav ul li:hover{
+    color:#ffd700;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    animation:fadeIn 2s ease;
+}
+
+.hero h2{
+    font-size:60px;
+}
+
+.hero p{
+    margin-top:20px;
+    max-width:600px;
+}
+
+section{
+    padding:80px 50px;
+    text-align:center;
+}
+
+.cards{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.card{
+    background:white;
+    color:black;
+    padding:20px;
+    width:250px;
+    border-radius:15px;
+    transition:0.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+
+.team{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.member{
+    background:white;
+    color:black;
+    padding:20px;
+    border-radius:15px;
+    width:200px;
+}
+
+footer{
+    padding:20px;
+    text-align:center;
+    background:rgba(0,0,0,0.3);
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(50px);}
+    to{opacity:1; transform:translateY(0);}
+}
+</style>
 </head>
+
 <body>
-    <!-- header area -->
-    <header>
-        <div class="logo">SPUDZ<span class="dot">🥔</span></div>
-        <nav>
-            <a href="#home">home</a>
-            <a href="#shop">shop</a>
-            <a href="#about">about</a>
-            <a href="cart.html">cart (<span id="cart-count">0</span>)</a>
-        </nav>
-    </header>
 
-    <!-- hero section -->
-    <section id="home" class="hero">
-        <h1>eat potatos<br><span class="highlight">or die tryin</span></h1>
-        <p>not your grandma's potatos. these hit diffrent.</p>
-        <button onclick="scrollToShop()">browse spuds ↓</button>
-    </section>
+<nav>
+    <h1>HydroLoop</h1>
+    <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Team</li>
+    </ul>
+</nav>
 
-    <!-- featured stuff -->
-    <section class="featured">
-        <div class="marquee">
-            <span>GOLDEN POTATOES • ORGANIC(ISH) • NO POTATO LEFT BEHIND • </span>
-            <span>GOLDEN POTATOES • ORGANIC(ISH) • NO POTATO LEFT BEHIND • </span>
-        </div>
-    </section>
+<div class="hero">
+    <h2>HydroLoop Basin</h2>
+    <p>Overshot Water Wheel Turbine for Sustainable Energy Generation 🌊⚙️</p>
+</div>
 
-    <!-- shop section -->
-    <section id="shop" class="products">
-        <h2>the spuds</h2>
-        <div class="filter-bar">
-            <button class="filter-btn active" onclick="filterProducts('all')">all</button>
-            <button class="filter-btn" onclick="filterProducts('russet')">russet</button>
-            <button class="filter-btn" onclick="filterProducts('gold')">golden</button>
-            <button class="filter-btn" onclick="filterProducts('fancy')">fancy</button>
-            <button class="filter-btn" onclick="filterProducts('acc')">accesories</button>
-        </div>
-        <div class="product-grid" id="product-grid">
-            <!-- products get loaded here by js -->
-        </div>
-    </section>
+<section>
+    <h2>🌍 About the Project</h2>
+    <p>
+        HydroLoop is a sustainable energy system that uses an overshot water wheel turbine.
+        Water is pumped to a higher level, then flows down to rotate the turbine and generate energy.
+        The system works in a continuous closed loop.
+    </p>
+</section>
 
-    <!-- about section kinda -->
-    <section id="about" class="about">
-        <h2>why potatos</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>ok so basicly we got tired of eating sad grocery store potatos that taste like nothing. so we started digging for better ones.</p>
-                <p>these potatos are sourced from actaul farms (not that supermarket garbage). each one is hand picked by gary, our potato guy.</p>
-                <p>shiping takes 3-5 days. they might sprout a lil but thats how u know theyre alive. just cut the sprouts off idk.</p>
-            </div>
-            <div class="about-stats">
-                <div class="stat">
-                    <span class="num">12,847</span>
-                    <span class="label">potatos sold</span>
-                </div>
-                <div class="stat">
-                    <span class="num">1</span>
-                    <span class="label">garry (our guy)</span>
-                </div>
-                <div class="stat">
-                    <span class="num">99%</span>
-                    <span class="label">potato</span>
-                </div>
-            </div>
-        </div>
-    </section>
+<section>
+    <h2>💡 Advantages</h2>
+    <div class="cards">
+        <div class="card">Clean Energy</div>
+        <div class="card">Low Cost</div>
+        <div class="card">Eco-Friendly</div>
+        <div class="card">Simple Design</div>
+    </div>
+</section>
 
-    <!-- newsletter -->
-    <section class="newsletter">
-        <h3>join the potato club</h3>
-        <p>get notified when new potatos drop. no spam (unless its in a can lol).</p>
-        <form onsubmit="subscribe(event)">
-            <input type="email" placeholder="ur email" id="email-input">
-            <button type="submit">join</button>
-        </form>
-    </section>
+<section>
+    <h2>👥 Team Members</h2>
+    <div class="team">
+        <div class="member">Ahmed Alaa</div>
+        <div class="member">Anas Mohamed</div>
+        <div class="member">Marwan Mahmoud</div>
+        <div class="member">Hamza Mohamed</div>
+        <div class="member">Nohaier Tarek</div>
+    </div>
+</section>
 
-    <!-- footer -->
-    <footer>
-        <div class="footer-links">
-            <a href="#">potato instagram</a>
-            <a href="#">potato tiktok</a>
-            <a href="#">potato twitter</a>
-        </div>
-        <p class="copyright">© 2024 SPUDZ. made with potato energy.</p>
-        <p class="fine-print">actualy gary runs our socials but he keeps posting pictures of his cat. working on it.</p>
-    </footer>
+<footer>
+    <p>© 2026 HydroLoop Project</p>
+</footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
