@@ -3,123 +3,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HydroLoop Project</title>
+<title>HydroLoop</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter', sans-serif;
 }
 
 body{
-    background:linear-gradient(to right,#00c6ff,#0072ff);
-    color:white;
-    overflow-x:hidden;
+  background:#0a0f1c;
+  color:white;
+  overflow-x:hidden;
 }
 
+/* NAV */
 nav{
-    display:flex;
-    justify-content:space-between;
-    padding:20px 50px;
-    background:rgba(0,0,0,0.2);
-    backdrop-filter:blur(10px);
-    position:fixed;
-    width:100%;
-    z-index:100;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 60px;
+  position:fixed;
+  width:100%;
+  background:rgba(10,15,28,0.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
 }
 
 nav h1{
-    font-size:24px;
-    font-weight:700;
+  color:#00d4ff;
 }
 
 nav ul{
-    display:flex;
-    list-style:none;
-    gap:20px;
+  display:flex;
+  gap:25px;
+  list-style:none;
 }
 
 nav ul li{
-    cursor:pointer;
-    transition:0.3s;
+  cursor:pointer;
+  opacity:0.8;
 }
 
 nav ul li:hover{
-    color:#ffd700;
+  opacity:1;
 }
 
+/* HERO */
 .hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    animation:fadeIn 2s ease;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background: radial-gradient(circle at center, #00d4ff33, transparent 60%);
 }
 
 .hero h2{
-    font-size:60px;
+  font-size:65px;
+  background:linear-gradient(90deg,#00d4ff,#007cf0);
+  -webkit-background-clip:text;
+  color:transparent;
 }
 
 .hero p{
-    margin-top:20px;
-    max-width:600px;
+  margin-top:20px;
+  max-width:600px;
+  opacity:0.8;
 }
 
+/* SECTION */
 section{
-    padding:80px 50px;
-    text-align:center;
+  padding:100px 60px;
+  text-align:center;
 }
 
-.cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
-}
-
+/* GLASS CARD */
 .card{
-    background:white;
-    color:black;
-    padding:20px;
-    width:250px;
-    border-radius:15px;
-    transition:0.4s;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+  backdrop-filter:blur(15px);
+  border-radius:20px;
+  padding:30px;
+  width:260px;
+  transition:0.4s;
 }
 
 .card:hover{
-    transform:translateY(-10px) scale(1.05);
+  transform:translateY(-10px);
+  border-color:#00d4ff;
 }
 
-.team{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:20px;
+/* FLEX */
+.flex{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  flex-wrap:wrap;
+  margin-top:40px;
 }
 
+/* TEAM */
 .member{
-    background:white;
-    color:black;
-    padding:20px;
-    border-radius:15px;
-    width:200px;
+  padding:20px;
+  border-radius:15px;
+  background:rgba(255,255,255,0.05);
+  width:200px;
+  transition:0.3s;
 }
 
+.member:hover{
+  transform:scale(1.05);
+  background:#00d4ff22;
+}
+
+/* FOOTER */
 footer{
-    padding:20px;
-    text-align:center;
-    background:rgba(0,0,0,0.3);
+  padding:30px;
+  text-align:center;
+  opacity:0.6;
 }
 
-@keyframes fadeIn{
-    from{opacity:0; transform:translateY(50px);}
-    to{opacity:1; transform:translateY(0);}
+/* SCROLL ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s;
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
 }
 </style>
 </head>
@@ -127,52 +145,64 @@ footer{
 <body>
 
 <nav>
-    <h1>HydroLoop</h1>
-    <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Team</li>
-    </ul>
+  <h1>HydroLoop</h1>
+  <ul>
+    <li>About</li>
+    <li>Advantages</li>
+    <li>Team</li>
+  </ul>
 </nav>
 
 <div class="hero">
-    <h2>HydroLoop Basin</h2>
-    <p>Overshot Water Wheel Turbine for Sustainable Energy Generation 🌊⚙️</p>
+  <h2>HydroLoop Basin</h2>
+  <p>Overshot Water Wheel Turbine for Sustainable Energy ⚙️🌊</p>
 </div>
 
-<section>
-    <h2>🌍 About the Project</h2>
-    <p>
-        HydroLoop is a sustainable energy system that uses an overshot water wheel turbine.
-        Water is pumped to a higher level, then flows down to rotate the turbine and generate energy.
-        The system works in a continuous closed loop.
-    </p>
+<section class="fade">
+  <h2>🌍 About</h2>
+  <p style="max-width:700px;margin:auto;margin-top:20px;opacity:0.8;">
+    HydroLoop is a closed-loop water system that demonstrates how flowing water can generate energy.
+    Water is pumped upward and flows down to rotate an overshot turbine, converting motion into usable power.
+  </p>
 </section>
 
-<section>
-    <h2>💡 Advantages</h2>
-    <div class="cards">
-        <div class="card">Clean Energy</div>
-        <div class="card">Low Cost</div>
-        <div class="card">Eco-Friendly</div>
-        <div class="card">Simple Design</div>
-    </div>
+<section class="fade">
+  <h2>💡 Advantages</h2>
+  <div class="flex">
+    <div class="card">Clean Energy</div>
+    <div class="card">Eco-Friendly</div>
+    <div class="card">Low Cost</div>
+    <div class="card">Educational Model</div>
+  </div>
 </section>
 
-<section>
-    <h2>👥 Team Members</h2>
-    <div class="team">
-        <div class="member">Ahmed Alaa</div>
-        <div class="member">Anas Mohamed</div>
-        <div class="member">Marwan Mahmoud</div>
-        <div class="member">Hamza Mohamed</div>
-        <div class="member">Nohaier Tarek</div>
-    </div>
+<section class="fade">
+  <h2>👥 Team</h2>
+  <div class="flex">
+    <div class="member">Ahmed Alaa</div>
+    <div class="member">Anas Mohamed</div>
+    <div class="member">Marwan Mahmoud</div>
+    <div class="member">Hamza Mohamed</div>
+    <div class="member">Nohaier Tarek</div>
+  </div>
 </section>
 
 <footer>
-    <p>© 2026 HydroLoop Project</p>
+  © 2026 HydroLoop Project
 </footer>
+
+<script>
+const elements = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const pos = el.getBoundingClientRect().top;
+    if(pos < window.innerHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
 
 </body>
 </html>
